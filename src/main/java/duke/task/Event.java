@@ -32,6 +32,16 @@ public class Event extends Task {
     public LocalDateTime getAtTime() {
         return this.atTime;
     }
+
+    /**
+     * Snooze deadline to a later date
+     */
+    public void setAtTime(String timeStr) {
+        String format = "HHmm, d/MM/yyyy";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+        this.atTime = LocalDateTime.parse(timeStr, formatter);
+    }
+
     /**
      * {@inheritDoc}
      * @return String of event with details, TaskType, name, isMarked and time.

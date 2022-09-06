@@ -34,6 +34,15 @@ public class Deadline extends Task {
     }
 
     /**
+     * Snooze deadline to a later date
+     */
+    public void setByTime(String timeStr) {
+        String format = "HHmm, d/MM/yyyy";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+        this.byTime = LocalDateTime.parse(timeStr, formatter);
+    }
+
+    /**
      * {@inheritDoc}
      * @return String of deadline with details, TaskType, name, isMarked and time.
      */

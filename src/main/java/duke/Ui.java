@@ -118,4 +118,15 @@ public class Ui {
     public String showFindEmptyMessage() {
         return ("There are no matching task in your list\n");
     }
+
+    /**
+     * Show snooze message when a task is postponed.
+     *
+     * @param task task to snooze
+     * @return  snooze message
+     */
+    public String showSnoozeMessage(Task task) {
+        return "Nice! I've snoozed this task:\n  " + task.toString();
+    }
+
 }
